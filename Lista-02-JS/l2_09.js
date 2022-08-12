@@ -14,7 +14,8 @@
 // Saída com base na próxima folga, calcular dia de trabalho/folga
 
 
-let hoje = new Date(2022, 0, 23);
+let hoje = new Date(2016, 1, 29);
+let folgaDaquiQuantosDias = 2;
 let algumDia = new Date(hoje);
 const MESES = {
     0: 'Janeiro', 1 :'Fevereiro', 2: 'Março', 
@@ -25,7 +26,7 @@ const MESES = {
 let estado = 'trabalha';
     console.log(`No dia ${hoje.getDate()} de ${MESES[hoje.getMonth()]} você trabalha`)
 for (var i = 0; i < 89; i++) {
-    if (((i - 5) % 8 == 0) || ((i - 6) % 8 == 0)) {
+    if (((i - folgaDaquiQuantosDias - 1) % 8 == 0) || ((i - folgaDaquiQuantosDias) % 8 == 0)) {
         estado = 'folga'
     } else {
         estado = 'trabalha'
