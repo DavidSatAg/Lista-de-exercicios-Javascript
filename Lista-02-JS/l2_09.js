@@ -34,3 +34,28 @@ for (var i = 0; i < 89; i++) {
     algumDia.setDate(algumDia.getDate() + 1)
     console.log(`No dia ${algumDia.getDate()} de ${MESES[algumDia.getMonth()]} você ${estado}`)
 }
+
+
+
+// (((i - 7) % 8 == 0) || ((i - 8) % 8 == 0))
+
+// // let hoje = new Date();
+// // let algumDia = new Date(hoje);
+// // for (var i = 0; i < 89; i++) {
+// //     algumDia.setDate(algumDia.getDate() + 1)
+// //     console.log(algumDia.getDate())
+// // }
+
+// 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+// T  T  T  T  T  T  F  F  T  T  T  T  T  T  F  F  T  T  T  T  T  T  F  F
+
+// pega uma data 
+
+// 7  8       7  -  7 = 0  -> resto por 8 = 0         8  -  8 = 0  -> resto por 8 = 0
+// 15 16      15 -  7 = 8  -> resto por 8 = 0         16 -  8 = 8  -> resto por 8 = 0
+// 23 24      23 -  7 = 16 -> resto por 8 = 0         24 -  8 = 16 -> resto por 8 = 0
+
+
+
+
+
