@@ -14,8 +14,8 @@
 // Saída com base na próxima folga, calcular dia de trabalho/folga
 
 
-let hoje = new Date(2016, 1, 29);
-let folgaDaquiQuantosDias = 2;
+let hoje = new Date(2022, 7, 15);
+let folgaDaquiQuantosDias = 1;
 let algumDia = new Date(hoje);
 const MESES = {
     0: 'Janeiro', 1 :'Fevereiro', 2: 'Março', 
@@ -24,16 +24,51 @@ const MESES = {
     9: 'Outubro', 10: 'Novembro', 11: 'Dezembro'
 }
 let estado = 'trabalha';
-    console.log(`No dia ${hoje.getDate()} de ${MESES[hoje.getMonth()]} você trabalha`)
-for (var i = 0; i < 89; i++) {
+for (var i = 0; i < 90; i++) {
     if (((i - folgaDaquiQuantosDias - 1) % 8 == 0) || ((i - folgaDaquiQuantosDias) % 8 == 0)) {
         estado = 'folga'
     } else {
         estado = 'trabalha'
     }
-    algumDia.setDate(algumDia.getDate() + 1)
     console.log(`No dia ${algumDia.getDate()} de ${MESES[algumDia.getMonth()]} você ${estado}`)
+    algumDia.setDate(algumDia.getDate() + 1)
 }
+
+
+// (i - 3) % 8
+// p/ i = 0 ->   
+// -3 % 8 = 5
+// -2 % 8 = 6
+// -1 % 8 = 7
+//  0 % 8 = 0
+//  1 % 8 = 5
+
+// p/ i = 7 ->
+// 4 % 8 = 4
+
+// T
+// T
+// T
+// F
+// F
+// T
+// T
+// T
+// T
+// T
+// T
+
+// (i - folgaDaquiQuantosDias) % 8      
+//                                                                 -7 / 8
+// (i - 7) % 8      -7 / 8 = -1 * 8 + 1    resto = 1
+// (i - 6) % 8      -6 / 8 = -1 * 8 + 2    resto = 2
+// (i - 5) % 8      -5 / 8 = -1 * 8 + 3    resto = 3
+// (i - 4) % 8      -4 / 8 = -1 * 8 + 4    resto = 4
+// (i - 3) % 8      -3 / 8 = -1 * 8 + 5    resto = 5
+// (i - 2) % 8      -2 / 8 = -1 * 8 + 6    resto = 6
+// (i - 1) % 8      -1 / 8 = -1 * 8 + 7    resto = 7
+// (i - 0) % 8       0 / 8 =  0 * 8 + 0    resto = 0
+
 
 
 
